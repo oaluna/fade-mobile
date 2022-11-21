@@ -1,20 +1,96 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from "react";
+import { GestureHandlerRootView } from "react-native-gesture-handler";
+import { StatusBar } from "expo-status-bar";
+import { NavigationContainer } from "@react-navigation/native";
+import { createStackNavigator } from "@react-navigation/stack";
+import { StyleSheet, Text, View } from "react-native";
+import HomeScreen from "./Screens/HomeScreen/HomeScreen";
+import LoadingScreen from "./Screens/LoadingScreen/LoadingScreen";
+ import LoginScreen from "./Screens/LoginScreen/LoginScreen";
+ import RegisterScreen from "./Screens/RegisterScreen/RegisterScreen";
+// import LocationAccess from "./Screens/LocationAccess/LocationAccess";
+// import DemoScreen from "./Screens/DemoScreen/DemoScreen";
+// import SearchScreen from "./Screens/SearchScreen/SearchScreen";
+import { func } from "./Constants";
+
+const Stack = createStackNavigator();
+const globalScreenOptions = {
+  headerStyle: { backgroundColor: "#2C6BED" },
+  headerTitleStyle: { color: "white" },
+  headerTintColor: "white",
+};
 
 export default function App() {
+  React.useEffect(() => {
+    async function prepare() {
+      try {
+        // keeps the splash screen visible while assets are cached
+        await SplashScreen.preventAutoHideAsync();
+
+        // pre-load/cache assets: images, fonts, and videos
+        await func.loadAssetsAsync();
+      } catch (e) {
+        // console.warn(e);
+      } finally {
+        // loading is complete
+        setIsLoading(false);
+      }
+    }
+
+    prepare();
+  }, []);
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <NavigationContainer>
+        <Stack.Navigator ScreenOption={globalScreenOptions}>
+          <Stack.Screen
+            name="splash"
+            component={LoadingScreen}
+            options={{ headerShown: false }}
+          />
+          {/* <Stack.Screen
+            name="demo"
+            component={DemoScreen}
+            options={{ headerShown: false }}
+          />
+          <Stack.Screen
+            name="locationAccess"
+            component={LocationAccess}
+            options={{ title: "Location Access" }}
+          />*/}
+          <Stack.Screen
+            name="login"
+            options={{ headerShown: false }}
+            component={LoginScreen}
+          /> 
+          <Stack.Screen
+            name="home"
+            options={{ headerShown: false }}
+            component={HomeScreen}
+          />
+          {/* 
+          <Stack.Screen
+            name="search"
+            options={{ headerShown: false }}
+            component={SearchScreen}
+          />
+          */}
+          <Stack.Screen
+            name="register"
+            options={{ headerShown: false }}
+            component={RegisterScreen}
+          /> 
+        </Stack.Navigator>
+      </NavigationContainer>
+    </GestureHandlerRootView>
   );
 }
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
+    backgroundColor: "#fff",
+    alignItems: "center",
+    justifyContent: "center",
   },
 });
