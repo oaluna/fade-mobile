@@ -1,13 +1,12 @@
 import { useFonts } from "expo-font";
 
-
-export default function fonts() {
+export default () => {
   const [loadedFonts] = useFonts({
-    "Comfortaa-Light": require("../assets/fonts/Comfortaa/Comfortaa-Light.ttf"),
-    "Comfortaa-Regular": require("../assets/fonts/Comfortaa/Comfortaa-Regular.ttf"),
-    "Comfortaa-Medium": require("../assets/fonts/Comfortaa/Comfortaa-Medium.ttf"),
-    "Comfortaa-SemiBold": require("../assets/fonts/Comfortaa/Comfortaa-SemiBold.ttf"),
-    "Comfortaa-Bold": require("../assets/fonts/Comfortaa/Comfortaa-Bold.ttf"),
+    "Comfortaa-Light": require("../assets/fonts/Comfortaa-Light.ttf"),
+    "Comfortaa-Regular": require("../assets/fonts/Comfortaa-Regular.ttf"),
+    "Comfortaa-Medium": require("../assets/fonts/Comfortaa-Medium.ttf"),
+    "Comfortaa-SemiBold": require("../assets/fonts/Comfortaa-SemiBold.ttf"),
+    "Comfortaa-Bold": require("../assets/fonts/Comfortaa-Bold.ttf"),
   });
   return [loadedFonts];
-}
+};

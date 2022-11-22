@@ -1,11 +1,11 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { useNavigation } from "@react-navigation/native";
-import { device, fonts, gStyle } from "../Constants";
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import { colors, device, fonts, gStyle } from '../Constants';
 
 // icons
-//import SvgClose from "./icons/Svg.Close";
+
 
 const ModalHeader = ({ style, text }) => {
   const navigation = useNavigation();
@@ -13,12 +13,12 @@ const ModalHeader = ({ style, text }) => {
   return (
     <View style={[styles.container, style]}>
       <TouchableOpacity
-        activeOpacity={styles.activeOpacity}
+        activeOpacity={gStyle.activeOpacity}
         hitSlop={{ bottom: 10, left: 10, right: 10, top: 10 }}
         onPress={() => navigation.goBack(null)}
         style={styles.containerIconRight}
       >
-        X
+        <Image source={require('../assets/images/close.png')} />
       </TouchableOpacity>
       {text && <Text style={styles.header}>{text}</Text>}
     </View>
@@ -27,7 +27,7 @@ const ModalHeader = ({ style, text }) => {
 
 ModalHeader.defaultProps = {
   style: {},
-  text: null,
+  text: null
 };
 
 ModalHeader.propTypes = {
@@ -35,49 +35,26 @@ ModalHeader.propTypes = {
   style: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.number,
-    PropTypes.object,
+    PropTypes.object
   ]),
-  text: PropTypes.string,
+  text: PropTypes.string
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "black",
+    backgroundColor: 'black',
     paddingHorizontal: 24,
-    paddingTop: 48
+    paddingTop:device.iPhoneNotch ? 48 : 24
   },
   containerIconRight: {
-    width: 20,
+    width: 20
   },
   header: {
-    color: "white",
+    color: colors.white,
     fontFamily: fonts.uberMedium,
     fontSize: 28,
-    paddingVertical: 16,
-  },
-  activeOpacity: 0.7,
-  container: {
-    backgroundColor: "white",
-    flex: 1,
-  },
-  flexCenter: {
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  flexRow: {
-    alignItems: "center",
-    flexDirection: "row",
-  },
-  flexRowSpace: {
-    alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  navHeaderStyle: {
-    backgroundColor: "black",
-    borderBottomWidth: 0,
-    elevation: 0,
-  },
+    paddingVertical: 16
+  }
 });
 
 export default ModalHeader;

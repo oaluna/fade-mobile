@@ -1,7 +1,7 @@
 export default {
-  comfortaaLight: 'comfortaaLight',
-  comfortaaMedium: 'comfortaaMedium',
-  comfortaaRegular: 'comfortaaRegular',
-  comfortaaSemiBold: 'comfortaaSemiBold',
-  comfortaaBold: 'comfortaaBold'
+  comfortaaLight: 'Comfortaa-Light',
+  comfortaaRegular: 'Comfortaa-Regular',
+  comfortaaMedium: 'Comfortaa-Medium',
+  comfortaaSemiBold: 'Comfortaa-SemiBold',
+  comfortaaBold: 'Comfortaa-Bold'
 };

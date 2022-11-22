@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { Linking, StyleSheet, Text, View, Image, Dimensions } from "react-native";
 import * as Location from "expo-location";
 import MapView from "react-native-maps";
-import { device, fonts, gStyle } from "../../Constants";
+import { device, fonts } from "../../Constants";
 
 // components
 import PickupAddress from "../../Components/PickupAddress";
@@ -12,11 +12,6 @@ import SelectRideType from "../../Components/SelectRideType";
 import TouchIcon from "../../Components/TouchIcon";
 import TouchText from "../../Components/TouchText";
 import WhereTo from "../../Components/WhereTo";
-
-// icons
-import SvgCheckShield from "../../assets/images/icon-user-shield.png";
-import SvgMenu from "../../assets/images/icon-menu.png";
-import SvgQRCode from "../../assets/images/icon-qr-code.png";
 
 const { PROVIDER_GOOGLE } = MapView;
 

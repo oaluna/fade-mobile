@@ -8,7 +8,7 @@ import {
   Pressable,
   Animated
 } from "react-native";
-const font = require("../../assets/fonts/Comfortaa/static/Comfortaa-Light.ttf");
+import { fonts } from "../../Constants";
 import styles from './styles'
 
 import React from "react";
@@ -30,7 +30,7 @@ const LoadingScreen = ({ navigation }) => {
         }}
         style={{ resizeMode: "cover", height: height, width: width}}
       >
-        <Animated.Image useNativeDriver
+        <Animated.Image useNativeDriver="true"
           source={{
             uri: "https://res.cloudinary.com/dgdnpkfun/image/upload/v1668379250/fade-logo_dr02kn.png",
           }}

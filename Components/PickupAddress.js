@@ -94,12 +94,12 @@ const styles = StyleSheet.create({
   },
   bannerText: {
     color: "white",
-    fontFamily: fonts.uberMedium,
+    fontFamily: fonts.comfortaaMedium,
     fontSize: 12,
   },
   bannerMuted: {
     color: "#9bd7c2",
-    fontFamily: fonts.uberMedium,
+    fontFamily: fonts.comfortaaMedium,
     fontSize: 12,
   },
 

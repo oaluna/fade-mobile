@@ -4,10 +4,11 @@ import styles from "./styles";
 import { AntDesign, FontAwesome5  } from "@expo/vector-icons";
 import { Divider } from 'react-native-elements';
 import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+
 const SearchScreen = ({navigation, route}) => {
     // For later use to track user selected destinations
     const [kwInput, setKwInput] = useState('');
-    const [destination, setDistnation] = useState(null);
+    const [destination, setDestnation] = useState(null);
     return (
     <KeyboardAvoidingView
       style={styles.container}
@@ -47,7 +48,7 @@ const SearchScreen = ({navigation, route}) => {
           needs to track user selected destinations as
           waze app does.
           */
-          // setDistnation({value:{data,details}})
+           setDestnation({value:{data,details}})
           navigation.push('home', {userDestination:{details},
                                   location: route?.params?.location})
         }}
@@ -61,4 +62,3 @@ const SearchScreen = ({navigation, route}) => {
 }
 
 export default SearchScreen
-

@@ -1,15 +1,14 @@
 import { StyleSheet, Dimensions } from "react-native";
-import { device } from "../../Constants";
+import { device, fonts } from "../../Constants";
 
 // minimum window hieght so keyboard does not push content up
-const { width, height } = Dimensions.get('screen');
+const { width, height } = Dimensions.get("screen");
 export default StyleSheet.create({
   container: {
     alignSelf: "center",
-   width: width,
-   height: height,
+    width: width,
+    height: height,
     backgroundColor: "white",
-
   },
   title: {},
   logo: {
@@ -27,11 +26,12 @@ export default StyleSheet.create({
     backgroundColor: "rgba(200,200,200,0.85)",
     marginVertical: 10,
     marginHorizontal: 30,
+    fontFamily: fonts.comfortaaRegular,
   },
   button: {
     backgroundColor: "#333",
     marginVertical: 10,
-   alignSelf: 'center',
+    alignSelf: "center",
     height: 48,
     width: 300,
     borderRadius: 30,
@@ -43,13 +43,14 @@ export default StyleSheet.create({
 
   buttonTitle: {
     color: "white",
-    fontSize: 20,
-    fontWeight: "bold",
+    fontSize: 24,
+    fontFamily: fonts.comfortaaBold,
+    textTransform: 'uppercase'
   },
   googleBtnText: {
     color: "black",
-    fontSize: 20,
-    fontWeight: "bold",
+    fontSize: 24,
+    fontFamily: fonts.comfortaaBold,
     marginLeft: 10,
   },
   footerView: {
@@ -78,7 +79,7 @@ export default StyleSheet.create({
     flexDirection: "row",
     backgroundColor: "white",
     marginVertical: 10,
- alignSelf: 'center',
+    alignSelf: "center",
     height: 48,
     width: 300,
     borderRadius: 30,

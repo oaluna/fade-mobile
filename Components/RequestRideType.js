@@ -1,86 +1,60 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
-import { fonts, images } from "../Constants";
+import * as React from 'react';
+import PropTypes from 'prop-types';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { colors, fonts, images } from '../Constants';
+
 
 const RequestRideType = ({ image, onPress, text }) => (
-  <View style={styles.container}>
   <TouchableOpacity
     activeOpacity={styles.activeOpacity}
     onPress={onPress}
+    style={styles.container}
   >
     <Image source={images[image]} style={styles.image} />
     <Text style={styles.text}>{text}</Text>
     <View style={styles.iconArrow}>
-      <Image
-        source={require("../assets/images/icon-bike.png")}
-        style={{ width: 32, height: 32 }}
-      />
+      <Image source={require('../assets/images/icon-chevron-down.png')} style={{resizeMode:'contain', width:20, height: 20}}/>
     </View>
   </TouchableOpacity>
-  </View>
 );
 
 RequestRideType.propTypes = {
+  // required
   image: PropTypes.oneOfType([PropTypes.number, PropTypes.string]).isRequired,
   onPress: PropTypes.func.isRequired,
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired
 };
 
 const styles = StyleSheet.create({
   container: {
-    width: 40,
-    flexWrap: "wrap",
-    alignSelf: "center",
-    alignItems: "center",
-    backgroundColor: "white",
+    alignItems: 'center',
+    backgroundColor: 'white',
     borderRadius: 26,
-    flexDirection: "row",
+    flexDirection: 'row',
     padding: 2,
-    shadowColor: "black",
+    shadowColor: 'black',
     shadowOffset: { height: 2, width: 0 },
     shadowOpacity: 0.2,
     shadowRadius: 8,
+    marginTop: 40
   },
   image: {
     borderRadius: 18,
     height: 34,
-    resizeMode: "contain",
+    resizeMode: 'contain',
     width: 34,
+    elevation: 2
   },
   text: {
-    fontFamily: fonts.light,
+    fontFamily: fonts.comfortaaLight,
     fontSize: 16,
-    paddingHorizontal: 8,
+    paddingHorizontal: 8
   },
   iconArrow: {
     marginRight: 6,
-    marginTop: 4,
+    marginTop: 4
   },
-  activeOpacity: 0.7,
-  container: {
-    backgroundColor: "white",
-    flex: 1,
-  },
-  flexCenter: {
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  flexRow: {
-    alignItems: "center",
-    flexDirection: "row",
-  },
-  flexRowSpace: {
-    alignItems: "center",
-    flexDirection: "row",
-    justifyContent: "space-between",
-  },
-  navHeaderStyle: {
-    backgroundColor: "black",
-    borderBottomWidth: 0,
-    elevation: 0,
-  },
-  activeOpacity: 0.7,
+ 
 });
 
 export default RequestRideType;

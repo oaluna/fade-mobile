@@ -4,13 +4,8 @@ import { StatusBar } from "expo-status-bar";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { StyleSheet, Text, View } from "react-native";
-import HomeScreen from "./Screens/HomeScreen/HomeScreen";
-import LoadingScreen from "./Screens/LoadingScreen/LoadingScreen";
- import LoginScreen from "./Screens/LoginScreen/LoginScreen";
- import RegisterScreen from "./Screens/RegisterScreen/RegisterScreen";
-// import LocationAccess from "./Screens/LocationAccess/LocationAccess";
-// import DemoScreen from "./Screens/DemoScreen/DemoScreen";
-// import SearchScreen from "./Screens/SearchScreen/SearchScreen";
+import RootStack from "./Navigation/RootStack";
+
 import { func } from "./Constants";
 
 const Stack = createStackNavigator();
@@ -43,12 +38,12 @@ export default function App() {
     <GestureHandlerRootView style={{ flex: 1 }}>
       <NavigationContainer>
         <Stack.Navigator ScreenOption={globalScreenOptions}>
-          <Stack.Screen
+          {/* <Stack.Screen
             name="splash"
             component={LoadingScreen}
             options={{ headerShown: false }}
           />
-          {/* <Stack.Screen
+          <Stack.Screen
             name="demo"
             component={DemoScreen}
             options={{ headerShown: false }}
@@ -57,7 +52,7 @@ export default function App() {
             name="locationAccess"
             component={LocationAccess}
             options={{ title: "Location Access" }}
-          />*/}
+          />
           <Stack.Screen
             name="login"
             options={{ headerShown: false }}
@@ -68,18 +63,19 @@ export default function App() {
             options={{ headerShown: false }}
             component={HomeScreen}
           />
-          {/* 
           <Stack.Screen
             name="search"
             options={{ headerShown: false }}
             component={SearchScreen}
           />
-          */}
           <Stack.Screen
             name="register"
             options={{ headerShown: false }}
             component={RegisterScreen}
-          /> 
+          />  */}
+      
+
+      <RootStack />
         </Stack.Navigator>
       </NavigationContainer>
     </GestureHandlerRootView>
