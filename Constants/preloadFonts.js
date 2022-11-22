@@ -1,15 +1,13 @@
-const { comfortaaLight } = require("../assets/fonts/Comfortaa/static/Comfortaa-Light.ttf");
-const { comfortaaRegular } = require("../assets/fonts/Comfortaa/static/Comfortaa-Regular.ttf");
-const { comfortaaMedium } = require("../assets/fonts/Comfortaa/static/Comfortaa-Medium.ttf");
-const { comfortaaSemiBold } = require("../assets/fonts/Comfortaa/static/Comfortaa-SemiBold.ttf");
-const { comfortaaBold } = require("../assets/fonts/Comfortaa/static/Comfortaa-Bold.ttf");
+import { useFonts } from "expo-font";
 
-export default [
-  {
-    comfortaaLight,
-    comfortaaRegular,
-    comfortaaMedium,
-    comfortaaSemiBold,
-    comfortaaBold,
-  },
-];
+
+export default function fonts() {
+  const [loadedFonts] = useFonts({
+    "Comfortaa-Light": require("../assets/fonts/Comfortaa/Comfortaa-Light.ttf"),
+    "Comfortaa-Regular": require("../assets/fonts/Comfortaa/Comfortaa-Regular.ttf"),
+    "Comfortaa-Medium": require("../assets/fonts/Comfortaa/Comfortaa-Medium.ttf"),
+    "Comfortaa-SemiBold": require("../assets/fonts/Comfortaa/Comfortaa-SemiBold.ttf"),
+    "Comfortaa-Bold": require("../assets/fonts/Comfortaa/Comfortaa-Bold.ttf"),
+  });
+  return [loadedFonts];
+}

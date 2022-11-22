@@ -1,26 +1,26 @@
-import colors from './colors';
+import colors from "./colors";
 
 export default {
   activeOpacity: 0.7,
   container: {
-    backgroundColor: colors.white,
+    backgroundColor: "white",
     flex: 1,
   },
   flexCenter: {
-    alignItems: 'center',
-    justifyContent: 'center',
+    alignItems: "center",
+    justifyContent: "center",
   },
   flexRow: {
-    alignItems: 'center',
-    flexDirection: 'row',
+    alignItems: "center",
+    flexDirection: "row",
   },
   flexRowSpace: {
-    alignItems: 'center',
-    flexDirection: 'row',
-    justifyContent: 'space-between',
+    alignItems: "center",
+    flexDirection: "row",
+    justifyContent: "space-between",
   },
   navHeaderStyle: {
-    backgroundColor: colors.black,
+    backgroundColor: "black",
     borderBottomWidth: 0,
     elevation: 0,
   },
