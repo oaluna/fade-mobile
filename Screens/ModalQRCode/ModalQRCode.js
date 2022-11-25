@@ -1,18 +1,18 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import { Image, StyleSheet, Text, View } from 'react-native';
-import { BarCodeScanner } from 'expo-barcode-scanner';
-import { colors, device, fonts, func, images } from '../../Constants';
+import * as React from "react";
+import PropTypes from "prop-types";
+import { Image, StyleSheet, Text, View } from "react-native";
+import { BarCodeScanner } from "expo-barcode-scanner";
+import { colors, device, fonts, func, images } from "../../Constants";
 
 // components
-import ModalHeader from '../../Components/ModalHeader';
+import ModalHeader from "../../Components/ModalHeader";
 
 class ModalQRCode extends React.Component {
   constructor() {
     super();
 
     this.state = {
-      cameraAccess: null
+      cameraAccess: null,
       // qrCode: null
     };
 
@@ -23,7 +23,7 @@ class ModalQRCode extends React.Component {
     const accessGranted = await func.cameraAccessAsync();
 
     this.setState({
-      cameraAccess: accessGranted
+      cameraAccess: accessGranted,
     });
   }
 
@@ -37,7 +37,7 @@ class ModalQRCode extends React.Component {
     const { cameraAccess } = this.state;
 
     return (
-      <View style={gStyle.container}>
+      <View style={styles.container}>
         {cameraAccess && (
           <React.Fragment>
             <BarCodeScanner
@@ -68,7 +68,7 @@ class ModalQRCode extends React.Component {
                 <View style={styles.boxSpacer} />
               </View>
 
-              <View style={[styles.containerBar, gStyle.flex1]}>
+              <View style={[styles.containerBar, styles.flex1]}>
                 <View style={[styles.containerBarIcons, styles.barWidth]}>
                   <View style={styles.containerIcon}>
                     <Image
@@ -96,77 +96,77 @@ class ModalQRCode extends React.Component {
 
 ModalQRCode.propTypes = {
   // required
-  navigation: PropTypes.object.isRequired
+  navigation: PropTypes.object.isRequired,
 };
 
 const styles = StyleSheet.create({
   barcodeScanner: {
     height: device.height,
-    position: 'absolute',
-    width: device.width
+    position: "absolute",
+    width: device.width,
   },
   overlay: {
     height: device.height,
-    width: device.width
+    width: device.width,
   },
   modalHeader: {
-    backgroundColor: 'black'
+    backgroundColor: "black",
   },
   containerBar: {
-    alignItems: 'center',
-    backgroundColor: 'black',
-    paddingVertical: 24
+    alignItems: "center",
+    backgroundColor: "black",
+    paddingVertical: 24,
   },
   containerBarIcons: {
-    flexDirection: 'row'
+    flexDirection: "row",
   },
   barWidth: {
-    justifyContent: 'space-between',
-    width: 240
+    justifyContent: "space-between",
+    width: 240,
   },
   containerIcon: {
-    alignItems: 'center',
-    width: 100
+    alignItems: "center",
+    width: 100,
   },
   iconBike: {
     height: 41,
     marginRight: 48,
-    width: 48
+    width: 48,
   },
   iconScooter: {
     height: 43,
-    width: 48
+    width: 48,
   },
   iconBottom: {
     height: 64,
-    width: 64
+    width: 64,
   },
   iconLabel: {
-    color: 'white',
+    color: "white",
     fontFamily: fonts.light,
-    marginTop: 24
+    marginTop: 24,
   },
   containerLabel: {
-    alignItems: 'center',
-    backgroundColor: 'black',
-    paddingVertical: 8
+    alignItems: "center",
+    backgroundColor: "black",
+    paddingVertical: 8,
   },
   label: {
-    color: 'white',
+    color: "white",
     fontFamily: fonts.light,
-    fontSize: 16
+    fontSize: 16,
   },
   containerHelperBox: {
-    flexDirection: 'row'
+    flexDirection: "row",
   },
   boxSpacer: {
-    backgroundColor: 'black',
-    flex: 1
+    backgroundColor: "black",
+    flex: 1,
   },
   box: {
     height: 200,
-    width: 200
-  }
+    width: 200,
+  },
 });
 
 export default ModalQRCode;

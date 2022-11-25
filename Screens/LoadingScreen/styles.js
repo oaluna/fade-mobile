@@ -25,15 +25,15 @@ export default StyleSheet.create({
     overflow: "hidden",
     backgroundColor: "rgba(200,200,200,0.85)",
     marginVertical: 10,
-    marginHorizontal: 30,
-    fontFamily: fonts.comfortaaRegular,
+    marginHorizontal: 15,
+    fontFamily: require('../../assets/fonts/Comfortaa-Regular.ttf'),
   },
   button: {
     backgroundColor: "#333",
-    marginVertical: 10,
+    marginVertical: 40,
     alignSelf: "center",
     height: 48,
-    width: 300,
+    width: 360,
     borderRadius: 30,
     borderWidth: 1,
     borderColor: "#2afbff",
@@ -78,14 +78,17 @@ export default StyleSheet.create({
   buttonGoogle: {
     flexDirection: "row",
     backgroundColor: "white",
-    marginVertical: 10,
+    marginVertical: 105,
     alignSelf: "center",
     height: 48,
-    width: 300,
+    width: 350,
     borderRadius: 30,
     borderWidth: 1,
     borderColor: "#2afbff",
     alignItems: "center",
     justifyContent: "center",
   },
+  text: {
+    fontSize: 20
+  }
 });

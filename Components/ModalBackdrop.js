@@ -1,6 +1,7 @@
 import * as React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet, TouchableWithoutFeedback, View } from 'react-native';
+import { colors } from '../Constants';
 
 const ModalBackdrop = ({ onPress }) => (
   <TouchableWithoutFeedback onPress={onPress}>
@@ -9,13 +10,14 @@ const ModalBackdrop = ({ onPress }) => (
 );
 
 ModalBackdrop.propTypes = {
+  // required
   onPress: PropTypes.func.isRequired
 };
 
 const styles = StyleSheet.create({
   backdrop: {
-    backgroundColor: 'black',
-    flex: 1,
+    backgroundColor: 'rgba(0,0,0,0.4)',
+    flex: 1
   }
 });
 

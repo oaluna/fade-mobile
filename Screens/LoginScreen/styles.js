@@ -39,6 +39,7 @@ export default StyleSheet.create({
     backgroundColor: "#333",
     marginVertical: 10,
     alignSelf:'center',
+   
     height: 48,
     width: 300,
     borderRadius: 30,
@@ -47,6 +48,7 @@ export default StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+
   buttonGoogle: {
     flexDirection: "row",
     backgroundColor: "white",
@@ -62,7 +64,7 @@ export default StyleSheet.create({
   },
   buttonTitle: {
     color: "white",
-    fontSize: 16,
+    fontSize: 20,
     fontWeight: "bold",
   },
   googleBtnText: {

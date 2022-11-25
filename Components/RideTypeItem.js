@@ -5,7 +5,7 @@ import { fonts, images } from '../Constants';
 
 const RideTypeItem = ({ image, onPress, text }) => (
   <TouchableOpacity
-    activeOpacity={styles.activeOpacity}
+    activeOpacity={{opacity: 1}}
     onPress={onPress}
     style={styles.container}
   >
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     width: 54
   },
   text: {
-    fontFamily: fonts.comfortaaRegular,
+    fontFamily: fonts.uberRegular,
     fontSize: 20,
     marginLeft: 16
   }

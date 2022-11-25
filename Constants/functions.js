@@ -12,25 +12,24 @@ const cacheFonts = (fonts) => fonts.map((font) => Font.loadAsync(font));
 
 // cache images
 // /////////////////////////////////////////////////////////////////////////////
-// const cacheImages = (images) =>
-//   Object.values(images).map((image) => {
-//     if (typeof image === "string") {
-//       return Image.prefetch(image);
-//     }
-
-//     return Asset.fromModule(image).downloadAsync();
-//   });
+ const cacheImages = (images) =>
+   Object.values(images).map((image) => {
+     if (typeof image === "string") {
+       return Image.prefetch(image);
+     }
+       return Asset.fromModule(image).downloadAsync();
+   });
 
 // preload async
 // /////////////////////////////////////////////////////////////////////////////
 const loadAssetsAsync = async () => {
   // preload assets
   const fontAssets = cacheFonts(preloadFonts);
-//  const imageAssets = cacheImages(preloadImages);
+  const imageAssets = cacheImages(preloadImages);
 
   // promise load all
   return Promise.all([...fontAssets,
-    // ...imageAssets
+     ...imageAssets
   ]);
 };
 

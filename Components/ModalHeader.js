@@ -1,11 +1,10 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import { StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
-import { useNavigation } from '@react-navigation/native';
-import { colors, device, fonts, gStyle } from '../Constants';
+import * as React from "react";
+import PropTypes from "prop-types";
+import { StyleSheet, Text, TouchableOpacity, View, Image } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+import { colors, device, fonts } from "../Constants";
 
 // icons
-
 
 const ModalHeader = ({ style, text }) => {
   const navigation = useNavigation();
@@ -13,12 +12,12 @@ const ModalHeader = ({ style, text }) => {
   return (
     <View style={[styles.container, style]}>
       <TouchableOpacity
-        activeOpacity={gStyle.activeOpacity}
+        activeOpacity={styles.activeOpacity}
         hitSlop={{ bottom: 10, left: 10, right: 10, top: 10 }}
         onPress={() => navigation.goBack(null)}
         style={styles.containerIconRight}
       >
-        <Image source={require('../assets/images/close.png')} />
+        <Image source={require("../assets/images/close.png")} style={{resizeMode:'contain', width: 32, height: 32}}/>
       </TouchableOpacity>
       {text && <Text style={styles.header}>{text}</Text>}
     </View>
@@ -27,7 +26,7 @@ const ModalHeader = ({ style, text }) => {
 
 ModalHeader.defaultProps = {
   style: {},
-  text: null
+  text: null,
 };
 
 ModalHeader.propTypes = {
@@ -35,26 +34,26 @@ ModalHeader.propTypes = {
   style: PropTypes.oneOfType([
     PropTypes.array,
     PropTypes.number,
-    PropTypes.object
+    PropTypes.object,
   ]),
-  text: PropTypes.string
+  text: PropTypes.string,
 };
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'black',
+    backgroundColor: "transparent",
     paddingHorizontal: 24,
-    paddingTop:device.iPhoneNotch ? 48 : 24
+    paddingTop: device.iPhoneNotch ? 48 : 24,
   },
   containerIconRight: {
-    width: 20
+    width: 20,
   },
   header: {
-    color: colors.white,
-    fontFamily: fonts.uberMedium,
+    color: "white",
+    fontFamily: fonts.comfortaaMedium,
     fontSize: 28,
-    paddingVertical: 16
-  }
+    paddingVertical: 16,
+  },
 });
 
 export default ModalHeader;

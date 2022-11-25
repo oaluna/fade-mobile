@@ -21,12 +21,12 @@ export default () => (
     screenOptions={{ headerShown: false }}
   >
     <Drawer.Screen
-      name="splash"
+      name="LoadingScreen"
       component={LoadingScreen}
       options={{ headerShown: false }}
     />
     <Drawer.Screen
-      name="demo"
+      name="DemoScreen"
       component={DemoScreen}
       options={{ headerShown: false }}
     />
@@ -36,22 +36,22 @@ export default () => (
       options={{ title: "Location Access" }}
     />
     <Drawer.Screen
-      name="login"
+      name="LoginScreen"
       options={{ headerShown: false }}
       component={LoginScreen}
     />
     <Drawer.Screen
-      name="home"
+      name="HomeScreen"
       options={{ headerShown: false }}
       component={HomeScreen}
     />
     <Drawer.Screen
-      name="search"
+      name="SearchScreen"
       options={{ headerShown: false }}
       component={SearchScreen}
     />
     <Drawer.Screen
-      name="register"
+      name="RegisterScreen"
       options={{ headerShown: false }}
       component={RegisterScreen}
     />

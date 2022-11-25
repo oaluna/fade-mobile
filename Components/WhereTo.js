@@ -4,132 +4,141 @@ import {
   Text,
   View,
   TextInput,
+  TouchableOpacity,
+  KeyboardAvoidingView,
   Image,
   Dimensions,
 } from "react-native";
+import { AntDesign, FontAwesome5 } from "@expo/vector-icons";
+import { Divider } from "react-native-elements";
 import { device, fonts } from "../Constants";
+import { GooglePlacesAutocomplete } from "react-native-google-places-autocomplete";
 
 // icons
 const { height, width } = Dimensions.get("screen");
 
-const WhereTo = () => {
+const WhereTo = ({ navigation, route }) => {
   const [text, onChangeText] = React.useState("");
+  const [kwInput, setKwInput] = React.useState("");
+  const [destination, setDestnation] = React.useState(null);
   return (
     <View style={styles.container}>
-        <View style={styles.containerInput}>
-          <View style={styles.containerSquare}>
-            <View style={styles.square} />
-          </View>
-
-          <View style={styles.text}>
-            <TextInput
-              style={styles.formInput}
-              onChangeText={onChangeText}
-              placeholder="Where To?"
-            />
-          </View>
-          <View style={styles.containerIcon}>
-            <Image
-              source={require("../assets/images/icon-dropoff.png")}
-              style={{ width: 32, height: 32 }}
-            />
-          </View>
+      <View style={styles.containerInput}>
+        <View style={styles.containerSquare}>
+          <View style={styles.square} />
         </View>
 
+       <KeyboardAvoidingView
+          style={styles.container}
+          behavior={Platform.OS == "ios" ? "padding" : "height"}
+        >
+          <GooglePlacesAutocomplete
+            placeholder="Where to ?"
+            fetchDetails={true}
+            styles={{
+              textInput: styles.textInputCustom,
+              listView: styles.listViewCustom,
+               description: styles.descriptionCustom,
+              row: styles.rowCustom,
+              powered: styles.poweredCustom,
+              poweredContainer: styles.poweredContainerCustom,
+            }}
+           textInputProps={{
+              autoFocus: true,
+              position:'absolute',
+              width:200,
+              top: -120, left: 50
+            }}
+            onPress={(data, details = null) => {
+      
+              setDestnation({ value: { data, details } });
+              navigation.navigate("HomeScreen", {
+                userDestination: { details },
+                location: route?.params?.location,
+              });
+            }}
+            query={{
+              key: "AIzaSyAbTRvjdd77iNZaSRPkR9BlwwWObK6czAc",
+              language: "en",
+            }}
+          />
+        </KeyboardAvoidingView>
+        <Divider style={{ marginLeft: 200 }} />
+        <View style={styles.containerIcon}>
+          <Image
+            source={require("../assets/images/icon-dropoff.png")}
+            style={{ width: 32, height: 32 }}
+          />
+        </View>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    alignSelf: "center",
-    position: "relative",
-    shadowColor: "white",
+    alignSelf: 'center',
+    position: 'absolute',
+    shadowColor: 'black',
     shadowOffset: { height: 2, width: 0 },
     shadowOpacity: 0.2,
     shadowRadius: 8,
-    marginVertical: 55,
-    width: width,
-    height: 50,
-    backgroundColor: "white",
-    flex: 1,
-    elevation: 4
-  },
-  containerInput: {
-    alignItems: "center",
-    backgroundColor: "white",
-    flexDirection: "row",
-    height: 48,
-    width: width,
-    padding: 5,
-    elevation: 4
+    top: device.iPhoneNotch ? 144 : 120,
+    width: device.width - 40
   },
   containerBanner: {
-    backgroundColor: "black",
+    backgroundColor: 'green',
     borderTopLeftRadius: 4,
     borderTopRightRadius: 4,
-    flexDirection: "row",
-    justifyContent: "space-between",
-    paddingHorizontal: 0,
-    paddingVertical: 4,
-    marginTop: 0,
-    marginHorizontal: 0,
-    width: width,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    paddingHorizontal: 16,
+    paddingVertical: 8
   },
   bannerText: {
-    color: "white",
-    fontFamily: fonts.uberMedium,
-    fontSize: 12,
+    color: 'white',
+    fontFamily: fonts.comfortaaMedium,
+    fontSize: 12
   },
   bannerMuted: {
-    color: "#9bd7c2",
-    fontFamily: fonts.uberMedium,
-    fontSize: 12,
+    color: 'mint',
+    fontFamily: fonts.comfortaaMedium,
+    fontSize: 12
   },
-
+  containerInput: {
+    alignItems: 'center',
+    backgroundColor: 'white',
+    flexDirection: 'row',
+    height: 48,
+    elevation: 2,
+  },
   containerSquare: {
-    alignItems: "center",
-    flex: 2,
+    alignItems: 'center',
+    flex: 2
   },
   square: {
-    backgroundColor: "black",
+    backgroundColor: 'black',
     height: 8,
-    width: 8,
+    width: 8
   },
   text: {
-    color: "grey",
+    color: 'darkgrey',
     flex: 8,
-    fontFamily: fonts.uberMedium,
-    fontSize: 20,
+    fontFamily: fonts.comfortaaMedium,
+    fontSize: 20
   },
   containerIcon: {
-    alignItems: "center",
-    borderLeftColor: "grey",
+    alignItems: 'center',
+    borderLeftColor: 'grey',
     borderLeftWidth: 1,
-    flex: 2,
-  },
-  tinyLogo: {
-    height: 100,
-    position: "absolute",
-    width: 200,
-    zIndex: 10,
-  },
-  formInput: {
-    backgroundColor: "transparent",
-    borderBottomColor: "transparent",
-    borderLeftColor: "transparent",
-    borderRightColor: "transparent",
-    borderTopColor: "transparent",
-    borderWidth: 1,
-    color: "black",
-    fontSize: 16,
-    fontWeight: fonts.normal,
-    height: 40,
-    marginVertical: 25,
-    width: 300,
-  },
-  activeOpacity: 0.7,
+    flex: 2
+  }, 
+  listViewCustom: {
+    marginTop: -75,
+    borderTopColor:'lightgrey',
+    borderTopWidth: 0.67,
+    elevation: 2,
+  }
 });
-
 
 export default WhereTo;

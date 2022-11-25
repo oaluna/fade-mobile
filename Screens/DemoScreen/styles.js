@@ -5,10 +5,10 @@ export default StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: "#FFFFFF"
+    backgroundColor: "#eeffff"
   },
   loginBtn: {
-      backgroundColor: 'white',
+      backgroundColor: '#333333',
       marginLeft: 30,
       marginRight: 30,
       marginTop: 20,
@@ -16,12 +16,13 @@ export default StyleSheet.create({
       width: 350,
       borderRadius: 30,
       borderWidth: 2,
-      borderColor: "#c5c5c5",
+      borderColor: "#2afbff",
       alignItems: "center",
-      justifyContent: 'center'
+      justifyContent: 'center',
+      elevation: 2
   },
   startBtn: {
-      backgroundColor: '#00bfff',
+      backgroundColor: '#2afbff',
       marginLeft: 30,
       marginRight: 30,
       marginTop: 20,
@@ -29,16 +30,17 @@ export default StyleSheet.create({
       width: 350,
       borderRadius: 40,
       alignItems: "center",
-      justifyContent: 'center'
+      justifyContent: 'center',
+      elevation: 2
   },
   startBtnText: {
-    fontSize: 20,
+    fontSize: 24,
     fontWeight: 'bold',
-    color: "#fff"
+    color: "#000000"
   },
   loginBtnText: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: "#808080"
+    color: "#ffffff"
     }
 });

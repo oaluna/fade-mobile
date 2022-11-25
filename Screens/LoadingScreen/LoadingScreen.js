@@ -38,15 +38,11 @@ const LoadingScreen = ({ navigation }) => {
         />
         <View style={{alignSelf:'center', width: 300}}>
         <View style={styles.buttonGoogle}>
-          <Pressable onPress={() => navigation.navigate("register")}>
+          <Pressable onPress={() => navigation.navigate("DemoScreen")}>
             <Text style={styles.text}>Get Started</Text>
           </Pressable>
         </View>
-        <View style={styles.button}>
-          <Pressable onPress={() => navigation.navigate("login")}>
-            <Text style={[styles.text, {color: '#fff'}]}>Sign In</Text>
-          </Pressable>
-        </View>
+        
         </View>
       </ImageBackground>
     </View>

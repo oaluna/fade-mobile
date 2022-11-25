@@ -4,6 +4,7 @@ import CustomSlider from "./Components/CustomSlider";
 import styles from "./styles";
 import sliderContent from "./slides";
 
+
 const DemoScreen = ({ navigation, route }) => {
   return (
     <View style={styles.container}>
@@ -12,20 +13,19 @@ const DemoScreen = ({ navigation, route }) => {
       <View style={{ bottom: 0, position: "absolute", marginBottom: 10 }}>
         <TouchableOpacity
           style={styles.startBtn}
-          i
-          onPress={() => navigation.push("locationAccess")}
+          onPress={() => navigation.navigate("locationAccess")}
           raised
           title="Register"
         >
-          <Text style={styles.startBtnText}>ابدأ</Text>
+          <Text style={styles.startBtnText}>Sign Up</Text>
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.loginBtn}
-          onPress={() => navigation.push("login")}
+          onPress={() => navigation.navigate("LoginScreen")}
           raised
           title="Register"
         >
-          <Text style={styles.loginBtnText}> تسجيل دخول</Text>
+          <Text style={styles.loginBtnText}>Already Signed Up?</Text>
         </TouchableOpacity>
       </View>
     </View>

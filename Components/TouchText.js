@@ -1,7 +1,7 @@
 import React from "react";
 //import PropTypes from "prop-types";
 import { Text, TouchableOpacity, StyleSheet } from "react-native";
-//import { gStyle } from "../Constants";
+//import {   } from "../Constants";
 
 const TouchText = ({ onPress, styleText, text }) => (
   <TouchableOpacity
@@ -38,7 +38,7 @@ const styles = StyleSheet.create({
     borderBottomWidth: 0,
     elevation: 0,
   },
-})
+});
 
 // TouchText.defaultProps = {
 //   style: {},

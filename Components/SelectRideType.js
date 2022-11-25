@@ -1,5 +1,5 @@
 import React from "react";
-//import PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import { Animated, Modal, StyleSheet, View } from "react-native";
 import { device } from "../Constants";
 
@@ -24,7 +24,7 @@ const SelectRideType = ({ data, onClose, onSelect, visible }) => {
       transparent
       visible={visible}
     >
-      <ModalBackdrop onPress={onClose} />
+      <ModalBackdrop style={styles.close} onPress={onClose} />
 
       <Animated.View style={[styles.container, { top }]}>
         {dataArray.map((key, index) => {
@@ -52,24 +52,23 @@ const SelectRideType = ({ data, onClose, onSelect, visible }) => {
   );
 };
 
-// SelectRideType.propTypes = {
-//   // required
-//   data: PropTypes.shape({
-//     image: PropTypes.string,
-//     imageLg: PropTypes.string,
-//     text: PropTypes.string,
-//   }).isRequired,
-//   onClose: PropTypes.func.isRequired,
-//   onSelect: PropTypes.func.isRequired,
-//   visible: PropTypes.bool.isRequired,
-// };
+ SelectRideType.propTypes = {
+  //  required
+   data: PropTypes.shape({
+     image: PropTypes.string,
+     imageLg: PropTypes.string,
+     text: PropTypes.string,
+   }).isRequired,
+   onClose: PropTypes.func.isRequired,
+   onSelect: PropTypes.func.isRequired,
+   visible: PropTypes.bool.isRequired,
+ };
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
-    paddingTop: device.iPhoneNotch ? 44 : 20,
-    position: "absolute",
-    top: 0,
+    paddingTop: 0,
+   marginTop: 0,
     width: "100%",
   },
   separator: {

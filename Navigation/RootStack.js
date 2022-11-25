@@ -12,13 +12,20 @@ import ModalTutorialBike from '../Screens/ModalTutorialBike/ModalTutorialBike';
 
 const Stack = createNativeStackNavigator();
 
+const globalScreenOptions = {
+  headerStyle: { backgroundColor: "#2C6BED" },
+  headerTitleStyle: { color: "white" },
+  headerTintColor: "white",
+};
+
 export default () => (
-  <NavigationContainer>
+<React.Fragment>
     <Stack.Navigator
-      screenOptions={{
+      screenOptions={[globalScreenOptions, {
         presentation: 'fullScreenModal'
-      }}
+      }]}
     >
+  
       <Stack.Screen
         name="DrawerStack"
         component={DrawerStack}
@@ -49,5 +56,5 @@ export default () => (
         }}
       />
     </Stack.Navigator>
-  </NavigationContainer>
+ </React.Fragment>
 );

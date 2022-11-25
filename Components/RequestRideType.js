@@ -35,15 +35,13 @@ const styles = StyleSheet.create({
     shadowColor: 'black',
     shadowOffset: { height: 2, width: 0 },
     shadowOpacity: 0.2,
-    shadowRadius: 8,
-    marginTop: 40
+    shadowRadius: 8
   },
   image: {
     borderRadius: 18,
     height: 34,
     resizeMode: 'contain',
-    width: 34,
-    elevation: 2
+    width: 34
   },
   text: {
     fontFamily: fonts.comfortaaLight,
@@ -53,8 +51,7 @@ const styles = StyleSheet.create({
   iconArrow: {
     marginRight: 6,
     marginTop: 4
-  },
- 
+  }
 });
 
 export default RequestRideType;

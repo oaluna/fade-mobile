@@ -9,6 +9,7 @@ import {
   ImageBackground,
   Dimensions,
 } from "react-native";
+
 import { Avatar, Input } from "react-native-elements";
 //import { auth } from "../../firebase";
 import { MaterialIcons, AntDesign } from "@expo/vector-icons";
@@ -31,6 +32,8 @@ const { height, width } = Dimensions.get("screen");
 function LoginScreen({navigation}) {
    const [email, setEmail] = React.useState("");
    const [password, setPassword] = React.useState("");
+
+
   // const [isAndroid, setIsAndroid] = React.useState(null);
 
   // React.useEffect(() => {
@@ -92,18 +95,18 @@ function LoginScreen({navigation}) {
 
           <TouchableOpacity
             style={[styles.button, { marginTop: 125 }]}
-            onPress={() => {navigation.push("home")}}
+            onPress={() => {navigation.navigate("HomeScreen")}}
           >
             <Text style={styles.buttonTitle}>Login</Text>
           </TouchableOpacity>
 
           <TouchableOpacity
-            style={styles.button}
-            onPress={() => navigation.push("register")}
+            style={[styles.button, { backgroundColor: "#2AFBFF"}]}
+            onPress={() => navigation.navigate("RegisterScreen")}
             type="outline"
             title="Register"
           >
-            <Text style={styles.buttonTitle}>Register</Text>
+            <Text style={[styles.buttonTitle, { color: 'black', fontSize: 20}]}>Don't have an account?</Text>
           </TouchableOpacity>
           {/* {isAndroid && ( */}
             <View>
