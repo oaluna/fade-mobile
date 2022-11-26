@@ -15,7 +15,7 @@ const TouchIcon = ({ icon, iconSize, onPress }) => (
 );
 
  TouchIcon.defaultProps = {
-   iconSize: 24,
+   iconSize: 32,
    style: {},
  };
 

@@ -19,6 +19,7 @@ const LoadingScreen = ({ navigation }) => {
   const [imgMarginTop, setImgMarginTop] = React.useState(new Animated.Value(300))
 
   React.useEffect(()=> {
+  
     Animated.timing(imgMarginTop, { toValue: 250 }).start()
   }, []);
 
@@ -30,7 +31,7 @@ const LoadingScreen = ({ navigation }) => {
         }}
         style={{ resizeMode: "cover", height: height, width: width}}
       >
-        <Animated.Image useNativeDriver="true"
+        <Animated.Image
           source={{
             uri: "https://res.cloudinary.com/dgdnpkfun/image/upload/v1668379250/fade-logo_dr02kn.png",
           }}

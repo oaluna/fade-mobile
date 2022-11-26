@@ -5,7 +5,6 @@ import { useNavigation } from "@react-navigation/native";
 import { colors, device, fonts } from "../Constants";
 
 // icons
-
 const ModalHeader = ({ style, text }) => {
   const navigation = useNavigation();
 
@@ -17,7 +16,10 @@ const ModalHeader = ({ style, text }) => {
         onPress={() => navigation.goBack(null)}
         style={styles.containerIconRight}
       >
-        <Image source={require("../assets/images/close.png")} style={{resizeMode:'contain', width: 32, height: 32}}/>
+        <Image
+          source={require("../assets/images/icon-goback.png")}
+          style={{ resizeMode: "contain", width: 32, height: 32 }}
+        />
       </TouchableOpacity>
       {text && <Text style={styles.header}>{text}</Text>}
     </View>
@@ -54,6 +56,7 @@ const styles = StyleSheet.create({
     fontSize: 28,
     paddingVertical: 16,
   },
+  
 });
 
 export default ModalHeader;

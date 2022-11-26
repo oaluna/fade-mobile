@@ -9,6 +9,9 @@ import RootStack from "./Navigation/RootStack";
 import { func } from "./Constants";
 
 export default function App() {
+  const [ isLoading, setIsLoading ] = React.useState(false);
+
+
   React.useEffect(() => {
     async function prepare() {
       try {

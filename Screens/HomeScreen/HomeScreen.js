@@ -1,6 +1,6 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import { Linking, StyleSheet, Text, View } from "react-native";
+import { Linking, StyleSheet, Text, View, Dimensions } from "react-native";
 import * as Location from "expo-location";
 import MapView from "react-native-maps";
 import { device, fonts } from "../../Constants";
@@ -31,6 +31,8 @@ const types = {
     text: "Bike",
   },
 };
+
+const { width, height } = Dimensions.get('screen');
 
 const HomeScreen = ({ navigation }) => {
   const [type, setType] = React.useState("car");
@@ -95,7 +97,7 @@ const HomeScreen = ({ navigation }) => {
             We need your location data...
           </Text>
           <TouchText
-            onPress={() => Linking.openURL("app-settings:")}
+            onPress={() => Linking.openURL("settings:")}
             style={styles.btnGoTo}
             styleText={styles.btnGoToText}
             text="Go To Permissions"
@@ -164,10 +166,12 @@ HomeScreen.propTypes = {
 const styles = StyleSheet.create({
   map: {
     flex: 1,
-    height: device.height,
+    height: height,
     position: "absolute",
-    width: device.width,
+    width: width,
     margin: 0,
+    marginTop: 35,
+    padding: 0,
     resizeMode: "cover",
   },
   containerNoLocation: {
@@ -230,7 +234,8 @@ const styles = StyleSheet.create({
     marginBottom: 16,
   },
   iconShield: {
-    backgroundColor: "white",
+    marginTop: 100,
+    backgroundColor: "blue",
   },
 });
 
