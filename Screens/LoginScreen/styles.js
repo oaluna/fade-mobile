@@ -9,7 +9,7 @@ export default StyleSheet.create({
     flex: 1,
     width: width,
     height: height,
-    alignSelf: 'center',
+    alignSelf: "center",
     alignItems: "center",
     justifyContent: "center",
     backgroundColor: "white",
@@ -33,13 +33,13 @@ export default StyleSheet.create({
     backgroundColor: "rgba(200,200,200,0.85)",
     marginVertical: 10,
     marginHorizontal: 30,
-    alignSelf: "center"
+    alignSelf: "center",
   },
   button: {
     backgroundColor: "#333",
     marginVertical: 10,
-    alignSelf:'center',
-   
+    alignSelf: "center",
+
     height: 48,
     width: 300,
     borderRadius: 30,
@@ -52,7 +52,7 @@ export default StyleSheet.create({
   buttonGoogle: {
     flexDirection: "row",
     backgroundColor: "white",
-   alignSelf:'center',
+    alignSelf: "center",
     marginTop: 20,
     height: 48,
     width: 300,
@@ -68,7 +68,7 @@ export default StyleSheet.create({
     fontWeight: "bold",
   },
   googleBtnText: {
-    color: "black",
+    color: "#000000",
     fontSize: 20,
     fontWeight: "bold",
     marginLeft: 10,
@@ -94,5 +94,10 @@ export default StyleSheet.create({
     marginVertical: 25,
     fontWeight: "800",
   },
-  image: { width: width - 80, height: 90, marginLeft: 10, resizeMode: "contain" },
+  image: {
+    width: width - 80,
+    height: 90,
+    marginLeft: 10,
+    resizeMode: "contain",
+  },
 });

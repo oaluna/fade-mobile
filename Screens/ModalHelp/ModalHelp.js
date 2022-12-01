@@ -43,7 +43,7 @@ const helpLinks = [
   }
 ];
 
-const CustomDrawerContent = ({ navigation, onClose }) => {
+const CustomDrawerContent = ({ navigation, onClose, onPress }) => {
 
   let helpData = Object.keys(helpLinks);
 
@@ -76,7 +76,7 @@ const CustomDrawerContent = ({ navigation, onClose }) => {
                 return (
                   <React.Fragment key={link.id}>
                     <View style={styles.link}>
-                      <Text style={{ color: "white", fontSize: 18 }} onPress={() => navigation.navigate(link.screen)}>
+                      <Text style={{ color: "white", fontSize: 18 }} onPress={onPress}>
                         {link.helpTitle}
                       </Text>
                     </View>
@@ -108,7 +108,7 @@ const CustomDrawerContent = ({ navigation, onClose }) => {
     },
     versionText: {
       color: "grey",
-      fontFamily: fonts.comfortaaRegular,
+
       fontSize: 20,
       textAlign: "right",
     },

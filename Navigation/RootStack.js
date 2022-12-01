@@ -1,14 +1,14 @@
-import * as React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import * as React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 // drawer stack
-import DrawerStack from './DrawerStack';
-
+import DrawerStack from "./DrawerStack";
+import TabBottom from "./TabStack";
 // screens
-import ModalHelp from '../Screens/ModalHelp/ModalHelp';
-import ModalQRCode from '../Screens/ModalQRCode/ModalQRCode';
-import ModalTutorialBike from '../Screens/ModalTutorialBike/ModalTutorialBike';
+import ModalHelp from "../Screens/ModalHelp/ModalHelp";
+import ModalQRCode from "../Screens/ModalQRCode/ModalQRCode";
+import ModalTutorialBike from "../Screens/ModalTutorialBike/ModalTutorialBike";
 
 const Stack = createNativeStackNavigator();
 
@@ -19,42 +19,49 @@ const globalScreenOptions = {
 };
 
 export default () => (
-<React.Fragment>
+  <React.Fragment>
     <Stack.Navigator
-      screenOptions={[globalScreenOptions, {
-        presentation: 'fullScreenModal'
-      }]}
+      screenOptions={[
+        globalScreenOptions,
+        {
+          presentation: "fullScreenModal",
+        },
+      ]}
     >
-  
       <Stack.Screen
         name="DrawerStack"
         component={DrawerStack}
         options={{
-          headerShown: false
+          headerShown: false,
         }}
+      />
+      <Stack.Screen
+        name="TabBottom"
+        component={TabBottom}
+        options={{ headerShown: "false" }}
       />
 
       <Stack.Screen
         name="ModalHelp"
         component={ModalHelp}
         options={{
-          headerShown: false
+          headerShown: false,
         }}
       />
       <Stack.Screen
         name="ModalQRCode"
         component={ModalQRCode}
         options={{
-          headerShown: false
+          headerShown: false,
         }}
       />
       <Stack.Screen
         name="ModalTutorialBike"
         component={ModalTutorialBike}
         options={{
-          headerShown: false
+          headerShown: false,
         }}
       />
     </Stack.Navigator>
- </React.Fragment>
+  </React.Fragment>
 );

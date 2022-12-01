@@ -97,12 +97,12 @@ const styles = StyleSheet.create({
   },
   bannerText: {
     color: 'white',
-    fontFamily: fonts.comfortaaMedium,
+    
     fontSize: 12
   },
   bannerMuted: {
     color: 'mint',
-    fontFamily: fonts.comfortaaMedium,
+    
     fontSize: 12
   },
   containerInput: {
@@ -124,7 +124,7 @@ const styles = StyleSheet.create({
   text: {
     color: 'darkgrey',
     flex: 8,
-    fontFamily: fonts.comfortaaMedium,
+    
     fontSize: 20
   },
   containerIcon: {

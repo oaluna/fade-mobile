@@ -20,7 +20,7 @@ export default {
     justifyContent: "space-between",
   },
   navHeaderStyle: {
-    backgroundColor: "black",
+    backgroundColor: "#000000",
     borderBottomWidth: 0,
     elevation: 0,
   },

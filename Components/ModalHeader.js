@@ -52,7 +52,7 @@ const styles = StyleSheet.create({
   },
   header: {
     color: "white",
-    fontFamily: fonts.comfortaaMedium,
+
     fontSize: 28,
     paddingVertical: 16,
   },

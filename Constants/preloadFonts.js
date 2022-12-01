@@ -1,8 +1,8 @@
-import { useFonts } from "expo-font";
+import { useFonts, loadAsync } from "expo-font";
  
 
 export default () => {
-  const fonts = useFonts({
+  const fonts = loadAsync({
     "Comfortaa-Light": require("../assets/fonts/Comfortaa-Light.ttf"),
     "Comfortaa-Regular": require("../assets/fonts/Comfortaa-Regular.ttf"),
     "Comfortaa-Medium": require("../assets/fonts/Comfortaa-Medium.ttf"),

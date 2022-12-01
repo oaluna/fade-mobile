@@ -9,7 +9,7 @@ import RideTypeItem from "./RideTypeItem";
 
 const SelectRideType = ({ data, onClose, onSelect, visible }) => {
   const dataArray = Object.keys(data);
-  const top = new Animated.Value(-200);
+  const top = new Animated.Value(200);
 
   Animated.timing(top, {
     duration: 400,
@@ -52,23 +52,23 @@ const SelectRideType = ({ data, onClose, onSelect, visible }) => {
   );
 };
 
- SelectRideType.propTypes = {
+SelectRideType.propTypes = {
   //  required
-   data: PropTypes.shape({
-     image: PropTypes.string,
-     imageLg: PropTypes.string,
-     text: PropTypes.string,
-   }).isRequired,
-   onClose: PropTypes.func.isRequired,
-   onSelect: PropTypes.func.isRequired,
-   visible: PropTypes.bool.isRequired,
- };
+  data: PropTypes.shape({
+    image: PropTypes.string,
+    imageLg: PropTypes.string,
+    text: PropTypes.string,
+  }).isRequired,
+  onClose: PropTypes.func.isRequired,
+  onSelect: PropTypes.func.isRequired,
+  visible: PropTypes.bool.isRequired,
+};
 
 const styles = StyleSheet.create({
   container: {
     backgroundColor: "white",
     paddingTop: 0,
-   marginTop: 0,
+    marginTop: 0,
     width: "100%",
   },
   separator: {
@@ -95,7 +95,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
   },
   navHeaderStyle: {
-    backgroundColor: "black",
+    backgroundColor: "#000000",
     borderBottomWidth: 0,
     elevation: 0,
   },

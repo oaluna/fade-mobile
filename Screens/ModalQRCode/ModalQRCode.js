@@ -110,11 +110,11 @@ const styles = StyleSheet.create({
     width: device.width,
   },
   modalHeader: {
-    backgroundColor: "black",
+    backgroundColor: "#000000",
   },
   containerBar: {
     alignItems: "center",
-    backgroundColor: "black",
+    backgroundColor: "#000000",
     paddingVertical: 24,
   },
   containerBarIcons: {
@@ -148,7 +148,7 @@ const styles = StyleSheet.create({
   },
   containerLabel: {
     alignItems: "center",
-    backgroundColor: "black",
+    backgroundColor: "#000000",
     paddingVertical: 8,
   },
   label: {
@@ -160,7 +160,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   boxSpacer: {
-    backgroundColor: "black",
+    backgroundColor: "#000000",
     flex: 1,
   },
   box: {

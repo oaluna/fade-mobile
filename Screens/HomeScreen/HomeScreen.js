@@ -1,6 +1,13 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import { Linking, StyleSheet, Text, View, Dimensions } from "react-native";
+import {
+  Linking,
+  StyleSheet,
+  Text,
+  View,
+  Dimensions,
+  Image,
+} from "react-native";
 import * as Location from "expo-location";
 import MapView from "react-native-maps";
 import { device, fonts } from "../../Constants";
@@ -11,6 +18,7 @@ import SelectRideType from "../../Components/SelectRideType";
 import TouchIcon from "../../Components/TouchIcon";
 import TouchText from "../../Components/TouchText";
 import WhereTo from "../../Components/WhereTo";
+import CircleMenu from "../../Components/CircleMenu/CircleMenu";
 
 // icons
 import SvgCheckShield from "../../Components/icons/Svg.CheckShield";
@@ -32,7 +40,7 @@ const types = {
   },
 };
 
-const { width, height } = Dimensions.get('screen');
+const { width, height } = Dimensions.get("screen");
 
 const HomeScreen = ({ navigation }) => {
   const [type, setType] = React.useState("car");
@@ -110,15 +118,15 @@ const HomeScreen = ({ navigation }) => {
           <View style={styles.icons}>
             <TouchIcon
               icon={<SvgQRCode />}
-              iconSize={20}
+              iconSize={32}
               onPress={() => navigation.navigate("ModalQRCode")}
-              style={[styles.icon, styles.iconQRCode]}
+              style={[styles.iconButtonDark, styles.iconQRCode]}
             />
             <TouchIcon
               icon={<SvgCheckShield />}
-              iconSize={20}
+              iconSize={32}
               onPress={() => navigation.navigate("ModalTutorialBike")}
-              style={[styles.icon, styles.iconShield]}
+              style={[styles.iconButtonLight, styles.iconShield]}
             />
           </View>
         </View>
@@ -154,6 +162,8 @@ const HomeScreen = ({ navigation }) => {
       />
 
       {type === "car" && <WhereTo />}
+
+      <CircleMenu />
     </View>
   );
 };
@@ -182,19 +192,18 @@ const styles = StyleSheet.create({
     width: device.width,
   },
   textLocationNeeded: {
-    fontFamily: fonts.comfortaaMedium,
+    
     fontSize: 16,
     marginBottom: 16,
   },
   btnGoTo: {
-    backgroundColor: "black",
+    backgroundColor: "#000000",
     borderRadius: 3,
     paddingHorizontal: 16,
     paddingVertical: 8,
   },
   btnGoToText: {
     color: "white",
-    fontFamily: fonts.comfortaaMedium,
     fontSize: 16,
   },
   header: {
@@ -202,7 +211,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     paddingHorizontal: 20,
-    paddingTop: device.iPhoneNotch ? 58 : 34,
+    paddingTop: device.iPhoneNotch ? 58 : 50,
   },
   help: {
     textAlign: "center",
@@ -218,24 +227,40 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     position: "absolute",
     right: 16,
+    top: height / 2,
     width: 40,
+    height: 100
+    
   },
-  icon: {
+  iconButtonDark: {
     borderRadius: 18,
     height: 36,
-    shadowColor: "black",
+    shadowColor: "#000080",
     shadowOffset: { height: 2, width: 0 },
     shadowOpacity: 0.2,
     shadowRadius: 8,
     width: 36,
+    marginVertical: 16,
+    backgroundColor: "#000080"
+  },
+  iconButtonLight: {
+    borderRadius: 18,
+    height: 36,
+    shadowColor: "#000000",
+    shadowOffset: { height: 2, width: 0 },
+    shadowOpacity: 0.2,
+    shadowRadius: 8,
+    width: 36,
+    marginVertical: 16,
+    backgroundColor: "#ffffff"
   },
   iconQRCode: {
-    backgroundColor: "blue",
-    marginBottom: 16,
+   marginTop: 100,
+   backgroundColor: "#000080"
   },
   iconShield: {
     marginTop: 100,
-    backgroundColor: "blue",
+    backgroundColor: "#ffffff",
   },
 });
 

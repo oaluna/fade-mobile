@@ -12,7 +12,7 @@ const SvgChevronRight = ({ fill, size }) => (
 );
 
 SvgChevronRight.defaultProps = {
-  fill: "black",
+  fill: "#000000",
   size: 24,
 };
 

@@ -72,7 +72,7 @@ const styles = StyleSheet.create({
   },
   versionText: {
     color: "grey",
-    fontFamily: fonts.comfortaaRegular,
+   
     fontSize: 20,
     textAlign: "right",
   },

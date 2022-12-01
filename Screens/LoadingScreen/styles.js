@@ -26,7 +26,7 @@ export default StyleSheet.create({
     backgroundColor: "rgba(200,200,200,0.85)",
     marginVertical: 10,
     marginHorizontal: 15,
-    fontFamily: require('../../assets/fonts/Comfortaa-Regular.ttf'),
+    fontFamily: require("../../assets/fonts/Comfortaa-Regular.ttf"),
   },
   button: {
     backgroundColor: "#333",
@@ -44,13 +44,13 @@ export default StyleSheet.create({
   buttonTitle: {
     color: "white",
     fontSize: 24,
-    fontFamily: fonts.comfortaaBold,
-    textTransform: 'uppercase'
+    
+    textTransform: "uppercase",
   },
   googleBtnText: {
-    color: "black",
+    color: "#000000",
     fontSize: 24,
-    fontFamily: fonts.comfortaaBold,
+    
     marginLeft: 10,
   },
   footerView: {
@@ -89,6 +89,6 @@ export default StyleSheet.create({
     justifyContent: "center",
   },
   text: {
-    fontSize: 20
-  }
+    fontSize: 20,
+  },
 });

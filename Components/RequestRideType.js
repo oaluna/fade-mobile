@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     width: 34
   },
   text: {
-    fontFamily: fonts.comfortaaLight,
+
     fontSize: 16,
     paddingHorizontal: 8
   },

@@ -12,7 +12,7 @@ const SvgArrowRight = ({ fill, size }) => (
 );
 
 SvgArrowRight.defaultProps = {
-  fill: "black",
+  fill: "#000000",
   size: 24,
 };
 

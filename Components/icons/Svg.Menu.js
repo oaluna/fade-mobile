@@ -1,6 +1,6 @@
 import * as React from "react";
 import PropTypes from "prop-types";
-import { Image } from "react-native"
+import { Image } from "react-native";
 import Svg, { Path } from "react-native-svg";
 
 const SvgMenu = ({ fill, size }) => (
@@ -10,11 +10,14 @@ const SvgMenu = ({ fill, size }) => (
   //     fill={fill}
   //   />
   // </Svg>
-  <Image source={require('../../assets/images/icon-menu.png')} style={{width: 32, height: 32, resizeMode: 'contain'}} />
+  <Image
+    source={require("../../assets/images/icon-menu.png")}
+    style={{ width: 32, height: 32, resizeMode: "contain" }}
+  />
 );
 
 SvgMenu.defaultProps = {
-  fill: "black",
+  fill: "#000000",
   size: 24,
 };
 

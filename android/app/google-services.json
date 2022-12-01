@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "259326988048",
+    "project_id": "fade-368301",
+    "storage_bucket": "fade-368301.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:259326988048:android:3797f65746805459f99f95",
+        "android_client_info": {
+          "package_name": "Fade.Android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "259326988048-s1btbtlaq8j2ubsms2n09rmnvtk8qi5r.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAz30tvT_9FeasChN_GoFu8VYEUZkDZH0E"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "259326988048-gd608jssm8gp1ko1q4iqqi37jc1cht5a.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
