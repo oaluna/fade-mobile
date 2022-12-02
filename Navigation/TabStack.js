@@ -1,10 +1,10 @@
 import { FontAwesome } from "@expo/vector-icons";
-import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+
 import { StatusBar } from "expo-status-bar";
 import { View } from "react-native";
 
 import {CircleMenu} from "../Components/CircleMenu/CircleMenu";
-
+import { createDrawerNavigator } from "@react-navigation/drawer";
 import HomeScreen from "../Screens/HomeScreen/HomeScreen";
 import LoadingScreen from "../Screens/LoadingScreen/LoadingScreen";
 import LoginScreen from "../Screens/LoginScreen/LoginScreen";
@@ -13,11 +13,11 @@ import LocationAccess from "../Screens/LocationAccess/LocationAccess";
 import DemoScreen from "../Screens/DemoScreen/DemoScreen";
 import SearchScreen from "../Screens/SearchScreen/SearchScreen";
 
-const Tab = createBottomTabNavigator();
+const Drawer = createDrawerNavigator();
 
 function TabBottom() {
   return (
-    <Tab.Navigator
+    <Drawer.Navigator
       name={CircleMenu}
       screenOptions={{
         headerShown: false, // hide labels
@@ -29,7 +29,7 @@ function TabBottom() {
         },
       }}
     >
-      <Tab.Screen
+      <Drawer.Screen
         name="HomeScreen"
         component={HomeScreen}
         options={{
@@ -38,7 +38,7 @@ function TabBottom() {
           ),
         }}
       />
-      <Tab.Screen
+      <Drawer.Screen
         name="LoginScreen"
         component={LoginScreen}
         options={{
@@ -47,14 +47,14 @@ function TabBottom() {
           ),
         }}
       />
-      <Tab.Screen
+      <Drawer.Screen
         name="DemoScreen"
         component={DemoScreen}
         options={{
           tabBarIcon: ({ color, size }) => <CircleMenu />,
         }}
       />
-      <Tab.Screen
+      <Drawer.Screen
         name="SearchScreen"
         component={SearchScreen}
         options={{
@@ -63,7 +63,7 @@ function TabBottom() {
           ),
         }}
       />
-    </Tab.Navigator>
+    </Drawer.Navigator>
   );
 }
 

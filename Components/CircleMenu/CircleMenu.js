@@ -8,11 +8,13 @@ import {
   Text,
   StyleSheet,
 } from "react-native";
+import { createDrawerNavigator } from '@react-navigation/drawer'
 import Icon from "@expo/vector-icons/FontAwesome";
 const SIZE = 64;
 const { width, height } = Dimensions.get("screen");
 
-const CircleMenu = () => {
+
+const CircleMenu = ({ navigation }) => {
   const mode = new Animated.Value(0);
   const toggleView = () => {
     Animated.timing(mode, {

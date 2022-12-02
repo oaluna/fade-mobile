@@ -96,6 +96,8 @@ const HomeScreen = ({ navigation }) => {
           showsUserLocation
           mapType="mutedStandard"
           style={styles.map}
+    loadingBackgroundColor={"#000080"}
+    loadingEnabled
         />
       )}
 

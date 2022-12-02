@@ -20,7 +20,7 @@ const LoadingScreen = ({ navigation }) => {
 
   React.useEffect(()=> {
   
-    Animated.timing(imgMarginTop, { toValue: 250 }).start()
+    Animated.timing(imgMarginTop, { toValue: 250, useNativeDriver: false }).start()
   }, []);
 
   return (

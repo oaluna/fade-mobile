@@ -6,6 +6,7 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { StyleSheet, Text, View } from "react-native";
 import RootStack from "./Navigation/RootStack";
 
+
 import { func } from "./Constants";
 
 export default function App() {

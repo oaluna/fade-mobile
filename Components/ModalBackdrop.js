@@ -5,13 +5,13 @@ import { colors } from '../Constants';
 
 const ModalBackdrop = ({ onPress }) => (
   <TouchableWithoutFeedback onPress={onPress}>
-    <View style={styles.backdrop} />
+    <View onPress={onPress} style={styles.backdrop} />
   </TouchableWithoutFeedback>
 );
 
 ModalBackdrop.propTypes = {
   // required
-  onPress: PropTypes.func.isRequired
+  onPress: PropTypes.func
 };
 
 const styles = StyleSheet.create({

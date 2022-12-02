@@ -42,7 +42,7 @@ export default () => (
     />
     <Drawer.Screen
       name="HomeScreen"
-      options={{ headerShown: false }}
+      options={{ headerShown: false, title: "Home" }}
       component={HomeScreen}
     />
     <Drawer.Screen
